@@ -1,0 +1,58 @@
+<!--izquierda -->
+<aside class="sidebar">
+  <nav>
+    <ul>
+      <li><a routerLink="/incidencias" routerLinkActive="active">Incidencias</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main class="main-content">
+  <!--Barra de búsqueda-->
+  <div class="search-bar">
+
+    <input
+      type="text"
+      placeholder="Buscar alumno..."
+      [(ngModel)]="searchTerm"
+      (input)="filtrarIncidencias()" />
+    <!--filtros-->
+    <select [(ngModel)]="selectedSeccion" (change)="filtrarIncidencias()">
+      <option value="">Todas las secciones</option>
+      <option *ngFor="let seccion of seccionesDisponibles" [value]="seccion">
+        {{ seccion }}
+      </option>
+    </select>
+
+    <select [(ngModel)]="selectedGrado" (change)="filtrarIncidencias()">
+      <option value="">Todos los grados</option>
+      <option *ngFor="let grado of gradosDisponibles" [value]="grado">
+        {{ grado }}
+      </option>
+    </select>
+  </div>
+
+  <!--Tabla-->
+  <table class="incidencias-table">
+    <thead>
+    <tr>
+      <th>Nro</th>
+      <th>Nombres y Apellidos</th>
+      <th>Grado</th>
+      <th>Seccion</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let incidencia of incidenciasFiltradas; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ incidencia.NombresApellidos }}</td>
+      <td>{{ incidencia.Grado }}</td>
+      <td>{{ incidencia.Seccion }}</td>
+      <td>
+        <a [routerLink]="['/incidencias', incidencia.id]" class="btn btn-primary">Ver</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</main>

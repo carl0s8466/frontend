@@ -1,0 +1,137 @@
+/*DATOS*/
+.student-info {
+  background: #f5f5f5;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+/*BÚSQUEDA Y BOTONES*/
+.actions-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.actions-bar input {
+  width: 300px;
+  padding: 0.5rem;
+}
+
+.actions-bar .buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.actions-bar button {
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.actions-bar button:hover {
+  background: #0056b3;
+}
+
+/*TABLA*/
+.incidencias-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.incidencias-table th,
+.incidencias-table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+}
+
+.incidencias-table th {
+  background: #1a2b3c;
+  color: #fff;
+}
+
+.incidencias-table button {
+  margin-right: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.incidencias-table button:first-child {
+  background: #28a745; /* Editar */
+  color: white;
+}
+
+.incidencias-table button:last-child {
+  background: #dc3545; /* Eliminar */
+  color: white;
+}
+
+/*CRUD*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal-content input.descripcion-input {
+  height: 3rem;
+  font-size: 1rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.modal-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-actions button:first-child {
+  background: #28a745;
+  color: #fff;
+}
+
+.modal-actions button:last-child {
+  background: #dc3545;
+  color: #fff;
+}

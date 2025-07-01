@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegisterComponent } from './register.component';
+import { IncidenciaListComponent } from './incidencia-list.component';
 
-describe('RegisterComponent', () => {
-  let component: RegisterComponent;
-  let fixture: ComponentFixture<RegisterComponent>;
+describe('IncidenciaListComponent', () => {
+  let component: IncidenciaListComponent;
+  let fixture: ComponentFixture<IncidenciaListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RegisterComponent]
+      imports: [IncidenciaListComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RegisterComponent);
+    fixture = TestBed.createComponent(IncidenciaListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

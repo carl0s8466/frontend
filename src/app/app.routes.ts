@@ -1,9 +1,16 @@
-import { Routes } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+import { IncidenciaListComponent } from './components/incidencia-list/incidencia-list.component';
+import { IncidenciaDetailComponent } from './components/incidencia-detail/incidencia-detail.component';
+import { IncidenciaCreateComponent } from './components/incidencia-create/incidencia-create.component';
+import {Routes} from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: '', redirectTo: 'incidencias', pathMatch: 'full' },
+  { path: 'incidencias', component: IncidenciaListComponent },
+  { path: 'incidencias/:id', component: IncidenciaDetailComponent },
+  { path: 'create-incidencia', component: IncidenciaCreateComponent },
+  {
+    path: 'incidencias/:id',
+    loadComponent: () => import('./components/incidencia-detail/incidencia-detail.component').then(m => m.IncidenciaDetailComponent)
+  }
+
 ];
