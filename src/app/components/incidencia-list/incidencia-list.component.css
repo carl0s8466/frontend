@@ -2,14 +2,16 @@
   display: flex;
   min-height: 100vh;
   font-family: Arial, sans-serif;
+  flex-direction: row; /* Mantiene sidebar a la izquierda */
 }
 
-/*izquierda*/
+/*IZQUIERDA */
 .sidebar {
   width: 200px;
   background-color: #1a2b3c;
   color: #fff;
   padding: 2rem 1rem;
+  flex-shrink: 0;
 }
 
 .sidebar nav ul {
@@ -30,16 +32,18 @@
   font-weight: bold;
 }
 
-/*main*/
+/* CONTENIDO PRINCIPAL*/
 .main-content {
   flex: 1;
   background-color: #f4f4f4;
   padding: 2rem;
+  overflow-x: auto;
 }
 
-/*buscador*/
+/*BUSQUEDA y FILTROS*/
 .search-bar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 1rem;
@@ -49,21 +53,23 @@
 .search-bar input {
   padding: 0.5rem 1rem;
   width: 800px;
+  max-width: 100%;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-/*filtros*/
+
 .search-bar select {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-/*Tabla*/
+/*TABLA*/
 .incidencias-table {
   width: 100%;
   border-collapse: collapse;
   background: #fff;
+  min-width: 600px;
 }
 
 .incidencias-table th,
@@ -82,7 +88,7 @@
   background-color: #f9f9f9;
 }
 
-/*Botón Ver*/
+/*BOTON VER*/
 .btn {
   display: inline-block;
   padding: 0.35rem 0.75rem;
@@ -95,4 +101,35 @@
 
 .btn:hover {
   background-color: #0056b3;
+}
+
+/* RESPONSIVE*/
+@media (max-width: 768px) {
+  :host {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+
+  .search-bar select {
+    width: 100%;
+  }
 }
